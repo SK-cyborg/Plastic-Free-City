@@ -1,43 +1,227 @@
-<html><head><title>
-Plastic-Free Living in Cities
-</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon" href="favicon (12).ico">
-<style>
-p,li{
-font-family: "Segoe UI";
-font-weight: 200;}
-td{background-color:black;color:white;border:10px solid black;color: white; text-align: center;}
-a:link {color: white;background-color: transparent;text-decoration: none;}
-a:visited {color: white;background-color: transparent;text-decoration: none;}
-a:hover {color: white;background-color: transparent;text-decoration: underline;}
-a:active {color: white;background-color: transparent;text-decoration: underline;}
-ul{overflow: hidden;}
-</style>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon (12).ico">
+    <title>Plastic-Free Living in Cities</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #222;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        .header-bar {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .roadmap-timeline {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background-color: black;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .milestone-block {
+            position: relative;
+            margin-bottom: 60px;
+            width: 100%;
+            display: flex;
+            z-index: 2;
+        }
+
+        .milestone-block.left { justify-content: flex-start; }
+        .milestone-block.right { justify-content: flex-end; }
+
+        .milestone-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            width: 45%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .milestone-dot {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            background-color: black;
+            border: 4px solid #f4f6f9;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .milestone-card h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: black;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .milestone-card img, .milestone-card video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 12px 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+            font-weight: 300;
+        }
+
+        .roadmap-btn {
+            display: inline-block;
+            background-color: black;
+            color: white !important;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+        .roadmap-btn:hover { background-color: #333; }
+
+        .outline-btn {
+            display: inline-block;
+            border: 1px solid black;
+            color: black !important;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .outline-btn:hover { background-color: #eee; }
+
+        .footer-table {
+            width: 100%;
+            background-color: black;
+            color: white;
+            margin-top: 60px;
+        }
+        .footer-table td {
+            padding: 15px;
+            font-size: 11px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        .footer-table a { color: #ccc; text-decoration: none; }
+        .footer-table a:hover { color: white; text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .roadmap-timeline::before { left: 20px; }
+            .milestone-dot { left: 20px; }
+            .milestone-block.left, .milestone-block.right { justify-content: flex-end; }
+            .milestone-card { width: 85%; }
+        }
+    </style>
 </head>
-<body bgcolor='lightgrey'>
-<table width=100% height=70px>
-<tr><td style=" font-size: 25px;"> Plastic-Free Living in Cities </td></tr></table>
-<a href='https://www.sfenvironment.org/zero-waste-program-history-and-outcomes'><img src="SF.jpg" width=400px style=" border-radius:15%;float:right;margin:10px;"></a>
-<h1><b>The Rise of Smart Cities in a Changing World</b></h1>
-<p>By 2050, cities will look drastically different from what we see today. As urban populations continue to grow, the demand for efficient, sustainable, and technologically advanced cities has never been greater. Enter the smart city future, where urban innovation, sustainable tech, and connected infrastructure redefine how people live, work, and interact with their surroundings.</p>
-<p>From AI-powered traffic systems to energy-efficient skyscrapers, smart cities will prioritize connectivity, automation, and sustainability. A main part of this transformation is the integration of plastic-free practices into urban planning and daily life.</p>
+<body>
 
-<a href=problems.html><img src="diagram.jpg" width=750px height=350px style=" border-radius:15%;float:left;margin:10px;"></a>
-<h1><b>Click above for San Francisco official website.^<br><br>Problems</b></h1>
-<ul><li>Environmental Impacts</li><li>Wildlife Harm</li><li>Human Health Risks</li><li>Climate and Resource Impacts</li><li>Social and Economic Consequences</li></ul>
-<video height="450" src="plastic.mp4" style=" border-radius:15%;float:right;margin:10px;" controls></video>
-<h1><b>Click above for Problems page.^<br><br><a href=solutions.html style="color:black;text-decoration: underline;">Solutions</a></b></h1>
-<ul><li>Avoiding single-use plastics</li><li>Recycling and proper disposal</li><li>Reducing microplastics</li><li>Supporting initiatives</li></ul>
-<h1><a href="tips.html" style="color:black;text-decoration: underline;">Tips And Awareness</a></h1>
-<ul><li>Wean off single-use plastics</li><li>Stop buying bottled water</li><li>Boycott microbeads</li><li>Learn to reduce plastic use</li><li>Support eco-friendly businesses</li></ul>
+    <div class="header-bar">
+        Plastic-Free Living in Cities
+    </div>
 
-<table width=100% height=70px>
-<tr><td> <a href=https://sk-cyborg.github.io/Model-City>More Information on Future Cities  (My old project from 2025)</a></td>
-<td> <a href=https://www.futurebra.in/ai-insights/smart-city-future>Source 1 of Information Used in This Webpage (Appears to have been taken down)</a></td>
-<td> <a href=https://www.wri.org/insights/plastic-pollution-global-plastics-treaty-explained>Source 2 of Information Used in This Webpage</a></td>
-<td> <a href=https://coolinfographics.com/blog/2023/12/18/the-problem-with-plastics>Source of Diagram Used in This Webpage</a></td>
-<td>  <a href=https://www.favicon.cc>Tool Used to Create Favicon Used in This Webpage</a></td>
-</tr>
-</table>
+    <div class="roadmap-timeline">
+
+        <div class="milestone-block left">
+            <div class="milestone-dot"></div>
+            <div class="milestone-card">
+                <h2>01. The Smart Future Vision</h2>
+                <a href="https://www.sfenvironment.org/zero-waste-program-history-and-outcomes"><img src="SF.jpg" alt="SF Project Link"></a>
+                <p>By 2050, cities will look drastically different. As urban populations continue to grow, sustainable tech and connected infrastructure redefine how people interact with their surroundings.</p>
+                <p style="margin-top: 8px;">A main part of this transformation is the integration of plastic-free practices into urban planning and daily life.</p>
+                <p style="font-size: 11px; color:#666; margin-top:10px;">^ Click image for San Francisco official website</p>
+            </div>
+        </div>
+
+        <div class="milestone-block right">
+            <div class="milestone-dot"></div>
+            <div class="milestone-card">
+                <h2>02. The Imminent Problems</h2>
+                <a href="problems.html"><img src="diagram.jpg" alt="Problems Diagram"></a>
+                <ul>
+                    <li>Environmental Impacts</li>
+                    <li>Wildlife Harm</li>
+                    <li>Human Health Risks</li>
+                    <li>Climate and Resource Impacts</li>
+                    <li>Social and Economic Consequences</li>
+                </ul>
+                <a href="problems.html" class="roadmap-btn">Explore Problems Page</a>
+            </div>
+        </div>
+
+        <div class="milestone-block left">
+            <div class="milestone-dot"></div>
+            <div class="milestone-card">
+                <h2>03. Implementing Solutions</h2>
+                <video src="plastic.mp4" controls></video>
+                <ul>
+                    <li>Avoiding single-use plastics</li>
+                    <li>Recycling and proper disposal</li>
+                    <li>Reducing microplastics</li>
+                    <li>Supporting initiatives</li>
+                </ul>
+                <a href="solutions.html" class="outline-btn">View Full Solutions</a>
+            </div>
+        </div>
+
+        <div class="milestone-block right">
+            <div class="milestone-dot"></div>
+            <div class="milestone-card">
+                <h2>04. Tips & Daily Awareness</h2>
+                <ul>
+                    <li>Wean off single-use plastics</li>
+                    <li>Stop buying bottled water</li>
+                    <li>Boycott microbeads</li>
+                    <li>Learn to reduce plastic use</li>
+                    <li>Support eco-friendly businesses</li>
+                </ul>
+                <a href="tips.html" class="roadmap-btn">Go to Tips Page</a>
+            </div>
+        </div>
+
+    </div>
+
+    <table class="footer-table">
+        <tr>
+            <td><a href="https://sk-cyborg.github.io/Model-City">More Information on Future Cities (My old project from 2025)</a></td>
+            <td><a href="https://www.futurebra.in/ai-insights/smart-city-future">Source 1 of Information Used (Taken down)</a></td>
+            <td><a href="https://www.wri.org/insights/plastic-pollution-global-plastics-treaty-explained">Source 2 of Information Used</a></td>
+            <td><a href="https://coolinfographics.com/blog/2023/12/18/the-problem-with-plastics">Source of Diagram Used</a></td>
+            <td><a href="https://www.favicon.cc">Tool Used to Create Favicon</a></td>
+        </tr>
+    </table>
+
 </body>
 </html>
