@@ -1,64 +1,210 @@
-<html><head><title>
-Solutions to Plastic Pollution in Cities
-</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon" href="favicon (14).ico">
-<style>
-p,li{
-font-family: "Segoe UI";
-font-weight: 200;}
-td{background-color:black;color:white;border:10px solid black;color: white; text-align: center;}
-a:link {color: white;background-color: transparent;text-decoration: none;}
-a:visited {color: white;background-color: transparent;text-decoration: none;}
-a:hover {color: white;background-color: transparent;text-decoration: underline;}
-a:active {color: white;background-color: transparent;text-decoration: underline;}
-ul{overflow: hidden;}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon (14).ico">
+    <title>Solutions to Plastic Pollution in Cities</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #222;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        .header-bar {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .roadmap-timeline {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background-color: black;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .milestone-block {
+            position: relative;
+            margin-bottom: 60px;
+            width: 100%;
+            display: flex;
+            z-index: 2;
+        }
+
+        .milestone-block.left { justify-content: flex-start; }
+        .milestone-block.right { justify-content: flex-end; }
+
+        .milestone-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            width: 45%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .milestone-dot {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            background-color: black;
+            border: 4px solid #f4f6f9;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .milestone-card h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: black;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .milestone-card img, .milestone-card video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        p {
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 12px 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+            font-weight: 300;
+        }
+
+        .roadmap-btn {
+            display: inline-block;
+            background-color: black;
+            color: white !important;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+        .roadmap-btn:hover { background-color: #333; }
+
+        .footer-table {
+            width: 100%;
+            background-color: black;
+            color: white;
+            margin-top: 60px;
+        }
+        .footer-table td {
+            padding: 15px;
+            font-size: 11px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        .footer-table a { color: #ccc; text-decoration: none; }
+        .footer-table a:hover { color: white; text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .roadmap-timeline::before { left: 20px; }
+            .milestone-dot { left: 20px; }
+            .milestone-block.left, .milestone-block.right { justify-content: flex-end; }
+            .milestone-card { width: 85%; }
+        }
+    </style>
 </head>
-<body bgcolor='lightgrey'>
-<table width=100% height=70px>
-<tr><td style=" font-size: 25px;"> Solutions to Plastic Pollution in Cities </td></tr></table>
-<a href='https://www.whatpackaging.co.in/news/all-about-indias-plastic-waste-amendment-rules-2026-59605'><img src="IN.jpg" width=400px style=" border-radius:15%;float:right;margin:10px;"></a>
-<h1><b>How Can We Prevent Plastic Pollution?</b></h1>
-<p>Ending plastic pollution will take more than swapping out single-use products for reusable ones, though that's a good start. To truly tackle the problem, we will need to transform the interconnected systems that design, produce, consume and manage plastics. This requires shifting incentives, subsidies and policies as well as materials and infrastructure.
+<body>
 
-With ambitious, coordinated policy and follow-through, it is possible for some regions to eliminate 97% of mismanaged plastic waste by 2050. These measures will come at a cost and will require efforts to better manage plastic throughout the entire value chain — both upstream (from fossil fuel extraction through to use) and downstream (once a product has been discarded).</p>
-<img src="diagram3.jpg" width=750px height=450px style=" border-radius:15%;float:left;margin:10px;">
-<h1><b>Click above for India Solutions.^<br><br>Upstream Solutions</b></h1>
-<p>Upstream interventions aim to reduce plastic pollution by limiting production and use in the first place.
+    <div class="header-bar">
+        Solutions to Plastic Pollution in Cities
+    </div>
 
-Part of the answer is reducing demand, both by shifting away from single-use packaging and by emphasizing durability (especially for products that need to last a long time, like airplane parts). But that won't be possible without tamping down supply: As long as plastics are abundant and cheap, it will disincentivize the use of alternative or recycled materials.
+    <div class="roadmap-timeline">
 
-Policy measures are a key tool governments can use to reduce supply and demand, bring transparency to supply chains, and encourage a more circular plastics economy where possible. <br>These could include:</p>
-<ul>
-<li>Ending fossil fuel subsidies</li>
-<li>Plastic bans or restrictions</li>
-<li>Disclosure requirements</li>
-<li>Labeling</li>
-<li>Extended Producer Responsibility (EPR)</li>
-<li>Incentives and investment frameworks</li>
-</ul>
+        <div class="milestone-block left">
+            <div class="milestone-dot"></div>
+            <div class="milestone-card">
+                <h2>01. How Can We Prevent Plastic Pollution?</h2>
+                <a href="https://www.whatpackaging.co.in/news/all-about-indias-plastic-waste-amendment-rules-2026-59605"><img src="IN.jpg" alt="India Waste Rules News Link"></a>
+                <p>Ending plastic pollution requires transforming the interconnected systems that design, produce, consume, and manage plastics. This requires shifting incentives, subsidies, and policies as well as materials and infrastructure.</p>
+                <p>With ambitious, coordinated policy, it is possible for some regions to eliminate 97% of mismanaged plastic waste by 2050.</p>
+                <p style="font-size: 11px; color:#666; margin-top:10px;">^ Click image for India Solutions context</p>
+            </div>
+        </div>
 
-<video height="400" src="solutions.mp4" style=" border-radius:15%;float:right;margin:10px;" controls></video>
-<h1><b><br>Downstream solutions</b></h1>
-<p>Downstream interventions aim to responsibly manage plastic waste after use so that it doesn't end up in the environment or human bodies. 
+        <div class="milestone-block right">
+            <div class="milestone-dot"></div>
+            <div class="milestone-card">
+                <h2>02. Upstream Solutions</h2>
+                <img src="diagram3.jpg" alt="Solutions Diagram">
+                <p>Upstream interventions aim to reduce plastic pollution by limiting production and use in the first place, tamping down supply, and shifting away from single-use packaging.</p>
+                <p>Key policy measures include:</p>
+                <ul>
+                    <li>Ending fossil fuel subsidies</li>
+                    <li>Plastic bans or restrictions</li>
+                    <li>Disclosure requirements</li>
+                    <li>Labeling</li>
+                    <li>Extended Producer Responsibility (EPR)</li>
+                    <li>Incentives and investment frameworks</li>
+                </ul>
+            </div>
+        </div>
 
-Most important is ensuring that waste is collected, sorted and managed as sustainably as possible. However, there is no perfect solution for managing pollution at any stage of the plastic lifecycle. The most common methods today include landfilling, recycling, incineration, pyrolysis and bioremediation. But despite most countries having some form of recycling policy, less than 10% of plastic waste is currently recycled, and both mechanical and chemical recycling contribute their own forms of pollution. 
+        <div class="milestone-block left">
+            <div class="milestone-dot"></div>
+            <div class="milestone-card">
+                <h2>03. Downstream Solutions</h2>
+                <video src="solutions.mp4" controls></video>
+                <p>Downstream interventions aim to responsibly manage plastic waste after use. Improving waste management requires significant infrastructure investments to serve all communities safely.</p>
+                <p>Additional systems include:</p>
+                <ul>
+                    <li>Deposit and return schemes</li>
+                    <li>Recognizing the informal recycling sector</li>
+                    <li>Reuse and refill systems</li>
+                    <li>Targeted litter removal</li>
+                </ul>
+                <a href="main.html" class="roadmap-btn">Back to Main Page</a>
+            </div>
+        </div>
 
-Improving waste management will require significant investment and infrastructure development to meet the needs of unserved and underserved communities, including the use of sanitary and secure landfill facilities where necessary.
-<br>Additional downstream solutions include:</p>
-<ul>
-<li>Deposit and return schemes</li>
-<li>Recognizing the informal recycling sector</li>
-<li>Reuse and refill systems</li>
-<li>Targeted litter removal</li>
-</ul>
+    </div>
 
-<table width=100% height=70px>
-<tr><td> <a href=main.html>Main Page</a></td>
-<td> <a href=https://www.wri.org/insights/plastic-pollution-global-plastics-treaty-explained>Source of Information Used in This Webpage</a></td>
-<td> <a href=https://www.weforum.org/stories/2018/01/these-11-innovations-will-tackle-the-causes-of-ocean-plastic-pollution-not-just-the-symptoms>Source of Diagram Used in This Webpage</a></td>
-<td>  <a href=https://www.favicon.cc>Tool Used to Create Favicon Used in This Webpage</a></td>
-</tr>
-</table>
+    <table class="footer-table">
+        <tr>
+            <td><a href="main.html">Main Page</a></td>
+            <td><a href="https://www.wri.org/insights/plastic-pollution-global-plastics-treaty-explained">Source of Information Used</a></td>
+            <td><a href="https://www.weforum.org/stories/2018/01/these-11-innovations-will-tackle-the-causes-of-ocean-plastic-pollution-not-just-the-symptoms">Source of Diagram Used</a></td>
+            <td><a href="https://www.favicon.cc">Tool Used to Create Favicon</a></td>
+        </tr>
+    </table>
+
 </body>
 </html>

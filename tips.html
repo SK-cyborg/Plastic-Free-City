@@ -1,50 +1,202 @@
-<html><head><title>
-Tips for Reducing Plastic Pollution in Cities
-</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon" href="favicon (15).ico">
-<style>
-p,li{
-font-family: "Segoe UI";
-font-weight: 200;}
-td{background-color:black;color:white;border:10px solid black;color: white; text-align: center;}
-a:link {color: white;background-color: transparent;text-decoration: none;}
-a:visited {color: white;background-color: transparent;text-decoration: none;}
-a:hover {color: white;background-color: transparent;text-decoration: underline;}
-a:active {color: white;background-color: transparent;text-decoration: underline;}
-ul{overflow: hidden;}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon (15).ico">
+    <title>Tips for Reducing Plastic Pollution in Cities</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #222;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        .header-bar {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .roadmap-timeline {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background-color: black;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .milestone-block {
+            position: relative;
+            margin-bottom: 60px;
+            width: 100%;
+            display: flex;
+            z-index: 2;
+        }
+
+        .milestone-block.left { justify-content: flex-start; }
+        .milestone-block.right { justify-content: flex-end; }
+
+        .milestone-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            width: 45%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .milestone-dot {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            background-color: black;
+            border: 4px solid #f4f6f9;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .milestone-card h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: black;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .milestone-card img, .milestone-card video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        p {
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 12px 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+            font-weight: 300;
+        }
+
+        .roadmap-btn {
+            display: inline-block;
+            background-color: black;
+            color: white !important;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+        .roadmap-btn:hover { background-color: #333; }
+
+        .footer-table {
+            width: 100%;
+            background-color: black;
+            color: white;
+            margin-top: 60px;
+        }
+        .footer-table td {
+            padding: 15px;
+            font-size: 11px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        .footer-table a { color: #ccc; text-decoration: none; }
+        .footer-table a:hover { color: white; text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .roadmap-timeline::before { left: 20px; }
+            .milestone-dot { left: 20px; }
+            .milestone-block.left, .milestone-block.right { justify-content: flex-end; }
+            .milestone-card { width: 85%; }
+        }
+    </style>
 </head>
-<body bgcolor='lightgrey'>
-<table width=100% height=70px>
-<tr><td style=" font-size: 25px;"> Tips for Reducing Plastic Pollution in Cities </td></tr></table>
-<img src="TIP.jpg" width=400px style=" border-radius:15%;float:right;margin:10px;">
-<h1><b>How Can We Reduce Plastic Pollution?</b></h1>
-<p>Reducing plastic pollution requires changes in consumer behavior, policy interventions, and industry practices. Here are some practical tips for individuals and communities to make a difference.
+<body>
 
-By making small changes in our daily lives, we can significantly reduce the amount of plastic waste we generate. These changes not only help protect the environment but also promote a more sustainable future.</p>
-<img src="diagram4.jpg" width=750px height=450px style=" border-radius:15%;float:left;margin:10px;">
-<h1><b>Practical Tips</b></h1>
-<p>Implementing simple changes in your daily routine can significantly reduce plastic waste and contribute to a healthier environment.</p>
-<ul>
-<li>Bring your own shopping bags</li>
-<li>Use reusable water bottles and coffee cups</li>
-<li>Avoid single-use plastics like straws and cutlery</li>
-<li>Choose products with minimal packaging</li>
-<li>Recycle properly and participate in local recycling programs</li>
-<li>Incentives and investment frameworks</li>
-</ul>
+    <div class="header-bar">
+        Tips for Reducing Plastic Pollution in Cities
+    </div>
 
-<video height="400" src="tip.mp4" style=" border-radius:15%;float:right;margin:10px;" controls></video>
-<h1><b><br>The Road Ahead</b></h1>
-<p>Reducing plastic waste is a journey that requires collective effort. While the challenge is significant, individual actions can make a real difference. A study shows that, if just 1 in 5 people switched to reusable shopping bags, we could eliminate 100 billion plastic bags from entering the environment. Choosing a reusable water bottle can save an average of 156 plastic bottles annually per person. As more individuals, businesses, and governments recognize the urgency of this issue, positive changes are happening. 
+    <div class="roadmap-timeline">
 
-As of 2023, 127 countries have implemented some form of legislation to regulate plastic bags, and the number of companies committing to reduce plastic use has quadrupled since 2018. By taking steps to reduce our plastic consumption and supporting sustainable initiatives, we can all contribute to a future where plastic pollution is significantly reduced.</p>
-<table width=100% height=70px>
-<tr><td> <a href=main.html>Main Page</a></td>
-<td> <a href=https://www.plasticsforchange.org/blog/how-can-you-help-reduce-plastic-waste>Source of Information Used in This Webpage</a></td>
-<td> <a href=https://susthingsout.com/easy-ways-to-reduce-your-plastic-waste>Source of Diagram Used in This Webpage</a></td>
-<td>  <a href=https://www.favicon.cc>Tool Used to Create Favicon Used in This Webpage</a></td>
-</tr>
-</table>
+        <div class="milestone-block left">
+            <div class="milestone-dot"></div>
+            <div class="milestone-card">
+                <h2>01. How Can We Reduce Plastic Pollution?</h2>
+                <img src="TIP.jpg" alt="Plastic Reduction Showcase Image">
+                <p>Reducing plastic pollution requires changes in consumer behavior, policy interventions, and industry practices.</p>
+                <p>By making small changes in our daily lives, we can significantly reduce the amount of plastic waste we generate. These changes protect the environment and promote a sustainable future.</p>
+            </div>
+        </div>
+
+        <div class="milestone-block right">
+            <div class="milestone-dot"></div>
+            <div class="milestone-card">
+                <h2>02. Practical Tips</h2>
+                <img src="diagram4.jpg" alt="Tips Diagram">
+                <p>Implementing simple changes in your daily routine can significantly reduce plastic waste and contribute to a healthier environment:</p>
+                <ul>
+                    <li>Bring your own shopping bags</li>
+                    <li>Use reusable water bottles and coffee cups</li>
+                    <li>Avoid single-use plastics like straws and cutlery</li>
+                    <li>Choose products with minimal packaging</li>
+                    <li>Recycle properly and participate in local programs</li>
+                    <li>Incentives and investment frameworks</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="milestone-block left">
+            <div class="milestone-dot"></div>
+            <div class="milestone-card">
+                <h2>03. The Road Ahead</h2>
+                <video src="tip.mp4" controls></video>
+                <p>Reducing plastic waste is a journey that requires collective effort. Choosing a reusable water bottle can save an average of 156 plastic bottles annually per person.</p>
+                <p>By taking steps to reduce consumption and supporting sustainable initiatives, we can contribute to a future where plastic pollution is significantly minimized.</p>
+                <a href="main.html" class="roadmap-btn">Back to Main Page</a>
+            </div>
+        </div>
+
+    </div>
+
+    <table class="footer-table">
+        <tr>
+            <td><a href="main.html">Main Page</a></td>
+            <td><a href="https://www.plasticsforchange.org/blog/how-can-you-help-reduce-plastic-waste">Source of Information Used</a></td>
+            <td><a href="https://susthingsout.com/easy-ways-to-reduce-your-plastic-waste">Source of Diagram Used</a></td>
+            <td><a href="https://www.favicon.cc">Tool Used to Create Favicon</a></td>
+        </tr>
+    </table>
+
 </body>
 </html>
