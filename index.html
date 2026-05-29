@@ -24,7 +24,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer; /* Changes mouse to a pointer to show it's clickable */
+            cursor: pointer;
         }
 
         video {
@@ -35,19 +35,21 @@
             top: 0;
             left: 0;
             z-index: 1;
+            opacity: 1;
+            transition: opacity 1s ease; /* Handles the smooth 1-second fade-to-black */
         }
 
         /* The overlay title styled beautifully */
         .overlay-title {
             position: relative;
-            z-index: 2; /* Sits on top of the video */
+            z-index: 2;
             color: white;
             font-size: 2.5rem;
             font-weight: bold;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Makes it readable over any video background */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
             text-align: center;
-            pointer-events: none; /* Allows clicks to pass right through the text to the video container */
-            transition: opacity 0.5s ease; /* Smooth fade out when video starts */
+            pointer-events: none;
+            transition: opacity 0.5s ease;
         }
 
         /* Class to hide the title smoothly */
@@ -80,9 +82,15 @@
             title.classList.add('hidden');
         });
 
-        // 2. Redirect when the video ends
+        // 2. Fade to black when the video ends, then redirect after 1 second
         video.addEventListener('ended', function() {
-            window.location.href = redirectUrl;
+            // Turn video transparent to show the black background behind it
+            video.style.opacity = '0';
+            
+            // Wait exactly 1000 milliseconds (1 second) before swapping pages
+            setTimeout(function() {
+                window.location.href = redirectUrl;
+            }, 1000); 
         });
 
         // 3. Click anywhere fallback to force play if autoplay was blocked
