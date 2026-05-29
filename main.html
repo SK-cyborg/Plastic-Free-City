@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -171,30 +172,44 @@
             box-shadow: 0 0 15px #ff0055;
         }
 
-        .footer-table {
-            width: 100%;
-            background-color: #11141a;
-            color: #718096;
-            margin-top: 60px;
+        /* Tech Footer Action Buttons Base */
+        .footer-cyber-nav {
+            max-width: 1000px;
+            margin: 60px auto 40px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
             border-top: 1px solid rgba(0, 243, 255, 0.2);
         }
 
-        .footer-table td {
-            padding: 20px;
-            font-size: 11px;
+        .cyber-btn {
+            flex: 1 1 160px;
+            max-width: 200px;
             text-align: center;
-            border: 1px solid #1a202c;
+            background-color: #11141a;
+            color: #a3aed0 !important;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            padding: 12px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
         }
 
-        .footer-table a { 
-            color: #a0aec0; 
-            text-decoration: none; 
-            transition: color 0.2s ease;
-        }
-
-        .footer-table a:hover { 
-            color: #00f3ff; 
-            text-shadow: 0 0 8px rgba(0, 243, 255, 0.5);
+        /* Cyan Glow State for Data Sources Buttons */
+        .cyber-btn:hover {
+            border-color: #00f3ff;
+            color: #00f3ff !important;
+            box-shadow: 0 0 12px rgba(0, 243, 255, 0.3);
+            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -202,6 +217,8 @@
             .milestone-dot { left: 20px; }
             .milestone-block.left, .milestone-block.right { justify-content: flex-end; }
             .milestone-card { width: 85%; }
+            .footer-cyber-nav { flex-direction: column; align-items: center; }
+            .cyber-btn { max-width: 100%; width: 100%; }
         }
     </style>
 </head>
@@ -272,15 +289,13 @@
 
     </div>
 
-    <table class="footer-table">
-        <tr>
-            <td><a href="https://sk-cyborg.github.io/Model-City">More Information on Future Cities (My old project from 2025)</a></td>
-            <td><a href="https://www.futurebra.in/ai-insights/smart-city-future">Source 1 of Information Used (Taken down)</a></td>
-            <td><a href="https://www.wri.org/insights/plastic-pollution-global-plastics-treaty-explained">Source 2 of Information Used</a></td>
-            <td><a href="https://coolinfographics.com/blog/2023/12/18/the-problem-with-plastics">Source of Diagram Used</a></td>
-            <td><a href="https://www.favicon.cc">Tool Used to Create Favicon</a></td>
-        </tr>
-    </table>
+    <div class="footer-cyber-nav">
+        <a href="https://sk-cyborg.github.io/Model-City" target="_blank" class="cyber-btn">Old Project (2025)</a>
+        <a href="https://www.futurebra.in/ai-insights/smart-city-future" target="_blank" class="cyber-btn">Source 1 (Offline)</a>
+        <a href="https://www.wri.org/insights/plastic-pollution-global-plastics-treaty-explained" target="_blank" class="cyber-btn">Source 2 Info</a>
+        <a href="https://coolinfographics.com/blog/2023/12/18/the-problem-with-plastics" target="_blank" class="cyber-btn">Diagram Source</a>
+        <a href="https://www.favicon.cc" target="_blank" class="cyber-btn">Favicon Tool</a>
+    </div>
 
 </body>
 </html>

@@ -9,19 +9,23 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #f4f6f9;
-            color: #222;
+            background-color: #0a0c10;
+            color: #d1d5db;
             font-family: "Segoe UI", sans-serif;
         }
 
         .header-bar {
-            background-color: black;
-            color: white;
+            background-color: #11141a;
+            color: #00f3ff;
             text-align: center;
             padding: 25px;
             font-size: 28px;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #00f3ff;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.6);
+            box-shadow: 0 4px 20px rgba(0, 243, 255, 0.2);
         }
 
         .roadmap-timeline {
@@ -31,6 +35,7 @@
             position: relative;
         }
 
+        /* The Neon Timeline Spine */
         .roadmap-timeline::before {
             content: '';
             position: absolute;
@@ -38,9 +43,10 @@
             bottom: 0;
             left: 50%;
             width: 4px;
-            background-color: black;
+            background-color: #00f3ff;
             transform: translateX(-50%);
             z-index: 1;
+            box-shadow: 0 0 15px #00f3ff, 0 0 5px #00f3ff;
         }
 
         .milestone-block {
@@ -54,90 +60,132 @@
         .milestone-block.left { justify-content: flex-start; }
         .milestone-block.right { justify-content: flex-end; }
 
+        /* Tech Modular Card Look */
         .milestone-card {
-            background-color: white;
+            background-color: #11141a;
             padding: 25px;
             border-radius: 12px;
             width: 45%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(0, 243, 255, 0.05);
+            transition: border 0.3s ease, box-shadow 0.3s ease;
         }
 
+        .milestone-card:hover {
+            border: 1px solid #00f3ff;
+            box-shadow: 0 5px 30px rgba(0, 243, 255, 0.2), inset 0 0 15px rgba(0, 243, 255, 0.1);
+        }
+
+        /* Glowing Milestone Node Points */
         .milestone-dot {
             position: absolute;
             top: 25px;
             left: 50%;
-            width: 16px;
-            height: 16px;
-            background-color: black;
-            border: 4px solid #f4f6f9;
+            width: 14px;
+            height: 14px;
+            background-color: #ff0055;
+            border: 4px solid #0a0c10;
             border-radius: 50%;
             transform: translateX(-50%);
+            box-shadow: 0 0 12px #ff0055, 0 0 4px #ff0055;
         }
 
         .milestone-card h2 {
             margin-top: 0;
             font-size: 20px;
-            color: black;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 8px;
-            margin-bottom: 12px;
+            color: #ffffff;
+            letter-spacing: 1px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .milestone-card img, .milestone-card video {
             width: 100%;
             height: auto;
-            border-radius: 8px;
-            margin-bottom: 12px;
+            border-radius: 6px;
+            margin-bottom: 15px;
             display: block;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         p {
             font-weight: 300;
-            line-height: 1.5;
-            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #a3aed0;
         }
 
         ul {
             padding-left: 20px;
-            margin: 12px 0;
+            margin: 15px 0;
         }
 
         li {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             font-weight: 300;
+            color: #e2e8f0;
         }
 
-        .roadmap-btn {
-            display: inline-block;
-            background-color: black;
-            color: white !important;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 13px;
+        /* Tech Footer Action Buttons Base */
+        .footer-cyber-nav {
+            max-width: 1000px;
+            margin: 60px auto 40px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            border-top: 1px solid rgba(0, 243, 255, 0.2);
         }
-        .roadmap-btn:hover { background-color: #333; }
 
-        .footer-table {
-            width: 100%;
-            background-color: black;
-            color: white;
-            margin-top: 60px;
-        }
-        .footer-table td {
-            padding: 15px;
-            font-size: 11px;
+        .cyber-btn {
+            flex: 1 1 180px;
+            max-width: 230px;
             text-align: center;
-            border: 1px solid #333;
+            background-color: #11141a;
+            color: #a3aed0 !important;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            padding: 12px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
         }
-        .footer-table a { color: #ccc; text-decoration: none; }
-        .footer-table a:hover { color: white; text-decoration: underline; }
+
+        /* Cyan Glow Highlight Action for Navigation Button */
+        .cyber-btn.home-accent {
+            border-color: #ff0055;
+            color: #ff0055 !important;
+            box-shadow: 0 0 8px rgba(255, 0, 85, 0.1);
+        }
+
+        .cyber-btn.home-accent:hover {
+            background-color: #ff0055;
+            color: #ffffff !important;
+            box-shadow: 0 0 15px #ff0055;
+        }
+
+        /* Cyan Glow State for Data Sources Buttons */
+        .cyber-btn:hover {
+            border-color: #00f3ff;
+            color: #00f3ff !important;
+            box-shadow: 0 0 12px rgba(0, 243, 255, 0.3);
+            transform: translateY(-2px);
+        }
 
         @media (max-width: 768px) {
             .roadmap-timeline::before { left: 20px; }
             .milestone-dot { left: 20px; }
             .milestone-block.left, .milestone-block.right { justify-content: flex-end; }
             .milestone-card { width: 85%; }
+            .footer-cyber-nav { flex-direction: column; align-items: center; }
+            .cyber-btn { max-width: 100%; width: 100%; }
         }
     </style>
 </head>
@@ -153,20 +201,20 @@
             <div class="milestone-dot"></div>
             <div class="milestone-card">
                 <h2>01. How Big Is the Plastic Problem?</h2>
-                <a href="https://www.greenpeace.org/malaysia/report/59607/malaysia-vs-plastic/"><img src="ML.jpg" alt="Malaysia Greenpeace Report Link"></a>
-                <p>According to the Organization of Economic Cooperation and Development's (OECD) Global Plastics Outlook, the world generates approximately 353 million metric tons of plastic waste per year — or almost a million metric tons every day.</p>
-                <p>Of this, OECD found that only around 9% is recycled. Fifty percent ends up in landfills, and 19% is incinerated. The rest (22%) ends up in insecure dumpsites, open pits, or leaks directly into nature.</p>
-                <p style="font-size: 11px; color:#666; margin-top:10px;">^ Click image for Malaysia Vs. Plastic Pollution report</p>
+                <a href="https://www.greenpeace.org/malaysia/report/59607/malaysia-vs-plastic/"><img src="ML.jpg" alt="Malaysia vs Plastic Report Link"></a>
+                <p>According to the Organisation for Economic Co-operation and Development's (OECD) Global Plastics Outlook, the world generates approximately 353 million metric tons of plastic waste per year — or almost a million metric tons every day.</p>
+                <p>Of this, OECD found that only around 9% is recycled. Fifty percent ends up in landfills, and 19% is incinerated. The rest (22%) ends up in dumpsites, leaks into the environment, or is unaccounted for.</p>
+                <p style="font-size: 11px; color:#556380; margin-top:10px;">^ Click image for Malaysia report</p>
             </div>
         </div>
 
         <div class="milestone-block right">
             <div class="milestone-dot"></div>
             <div class="milestone-card">
-                <h2>02. Where Does It All End Up?</h2>
+                <h2>02. Where Does Waste End Up?</h2>
                 <img src="diagram2.png" alt="Plastic Accumulation Diagram">
-                <p>Much of the plastic pollution enters freshwater and marine ecosystems. The notorious Great Pacific Garbage Patch now spans roughly 1.6 million square kilometers — an area three times the size of France.</p>
-                <p>Concerningly, both plastic consumption and waste levels are expected to triple by 2060 compared to 2019 levels.</p>
+                <p>Much of the environmental plastic enters freshwater and marine ecosystems. Ocean currents carry it long distances to high seas. The notorious Great Pacific Garbage Patch now spans roughly 1.6 million square kilometers.</p>
+                <p> concerningly, plastic consumption and waste are expected to triple by 2060 compared to 2019 levels.</p>
             </div>
         </div>
 
@@ -175,27 +223,24 @@
             <div class="milestone-card">
                 <h2>03. Why Is Plastic So Harmful?</h2>
                 <video src="problem.mp4" controls></video>
-                <p>Plastics pose wide-ranging hazards for people, ecosystems, and global climate security:</p>
+                <p>Plastics pose wide-ranging hazards for people, ecosystems, and the climate:</p>
                 <ul>
                     <li>Plastic contributes to climate change</li>
                     <li>Plastic harms people and the environment</li>
                     <li>Plastic pollution has economic costs</li>
                     <li>Plastics' impacts are unequal</li>
                 </ul>
-                <a href="main.html" class="roadmap-btn">Back to Main Page</a>
             </div>
         </div>
 
     </div>
 
-    <table class="footer-table">
-        <tr>
-            <td><a href="main.html">Main Page</a></td>
-            <td><a href="https://www.wri.org/insights/plastic-pollution-global-plastics-treaty-explained">Source of Information Used</a></td>
-            <td><a href="https://fity.club/lists/1/plastic-recycling-facts-infographic-recycling-facts/x">Source of Diagram Used</a></td>
-            <td><a href="https://www.favicon.cc">Tool Used to Create Favicon</a></td>
-        </tr>
-    </table>
+    <div class="footer-cyber-nav">
+        <a href="main.html" class="cyber-btn home-accent">Main Page</a>
+        <a href="https://www.wri.org/insights/plastic-pollution-global-plastics-treaty-explained" target="_blank" class="cyber-btn">Information Source</a>
+        <a href="https://fity.club/lists/1/plastic-recycling-facts-infographic-recycling-facts/x" target="_blank" class="cyber-btn">Diagram Source</a>
+        <a href="https://www.favicon.cc" target="_blank" class="cyber-btn">Favicon Creator Tool</a>
+    </div>
 
 </body>
 </html>
