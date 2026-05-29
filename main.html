@@ -12,6 +12,7 @@
             background-color: #0a0c10;
             color: #d1d5db;
             font-family: "Segoe UI", sans-serif;
+            overflow-x: hidden;
         }
 
         .header-bar {
@@ -60,7 +61,7 @@
         .milestone-block.left { justify-content: flex-start; }
         .milestone-block.right { justify-content: flex-end; }
 
-        /* Tech Modular Card Look */
+        /* Tech Modular Card Look & Smooth Transition Entry Style */
         .milestone-card {
             background-color: #11141a;
             padding: 25px;
@@ -69,6 +70,26 @@
             border: 1px solid rgba(0, 243, 255, 0.3);
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(0, 243, 255, 0.05);
             transition: border 0.3s ease, box-shadow 0.3s ease;
+            
+            opacity: 0;
+            animation: cyberGlide 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        /* Staggered card arrivals for a smooth cascading effect */
+        .milestone-block:nth-child(1) .milestone-card { animation-delay: 0.2s; }
+        .milestone-block:nth-child(2) .milestone-card { animation-delay: 0.4s; }
+        .milestone-block:nth-child(3) .milestone-card { animation-delay: 0.6s; }
+        .milestone-block:nth-child(4) .milestone-card { animation-delay: 0.8s; }
+
+        @keyframes cyberGlide {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .milestone-card:hover {
@@ -204,7 +225,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Cyan Glow State for Data Sources Buttons */
         .cyber-btn:hover {
             border-color: #00f3ff;
             color: #00f3ff !important;
@@ -245,6 +265,7 @@
             <div class="milestone-dot"></div>
             <div class="milestone-card">
                 <h2>02. The Imminent Problems</h2>
+                <video src="plastic.mp4" controls></video>
                 <a href="problems.html"><img src="diagram.jpg" alt="Problems Diagram"></a>
                 <ul>
                     <li>Environmental Impacts</li>
@@ -261,7 +282,6 @@
             <div class="milestone-dot"></div>
             <div class="milestone-card">
                 <h2>03. Implementing Solutions</h2>
-                <video src="plastic.mp4" controls></video>
                 <ul>
                     <li>Avoiding single-use plastics</li>
                     <li>Recycling and proper disposal</li>
