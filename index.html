@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,10 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #000;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0c10;
+            font-family: 'Segoe UI', sans-serif;
         }
 
-        /* Container to stack video, text, and fade-layer */
         .video-container {
             position: relative;
             width: 100%;
@@ -36,39 +36,76 @@
             z-index: 1;
         }
 
-        /* The overlay title styled beautifully */
+        /* Tech HUD scanline overlay */
+        .video-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 4px, 6px 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* Glitched Neon Text Trigger */
         .overlay-title {
             position: relative;
-            z-index: 2;
-            color: white;
-            font-size: 2.5rem;
+            z-index: 4;
+            color: #ffffff;
+            font-size: 3rem;
             font-weight: bold;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px #00f3ff, 0 0 20px #ff0055;
             text-align: center;
             pointer-events: none;
             transition: opacity 0.5s ease;
         }
 
-        /* A solid black curtain that sits invisibly above the video */
+        .video-container:hover .overlay-title {
+            animation: textGlitch 0.3s linear infinite;
+        }
+
+        @keyframes textGlitch {
+            0% { text-shadow: 2px -2px 0 #ff0055, -2px 2px 0 #00f3ff; }
+            25% { text-shadow: -2px 2px 0 #ff0055, 2px -2px 0 #00f3ff; }
+            50% { text-shadow: 2px 2px 0 #ff0055, -2px -2px 0 #00f3ff; }
+            75% { text-shadow: -2px -2px 0 #ff0055, 2px 2px 0 #00f3ff; }
+            100% { text-shadow: 2px -2px 0 #ff0055, -2px 2px 0 #00f3ff; }
+        }
+
+        /* Cyberpunk System Disconnect Curtain Layer */
         .black-curtain {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #000;
-            z-index: 3; /* Sits on top of EVERYTHING */
+            background-color: #00f3ff; /* Triggers neon cyan blast flash first */
+            z-index: 5;
             opacity: 0;
-            pointer-events: none; /* Allows clicks to go through it */
-            transition: opacity 1s ease-in-out; /* Super smooth transition */
+            pointer-events: none;
+            transform: scaleY(0.005); /* Scales down to a thin horizon blip line */
+            transition: opacity 0.15s ease, background-color 0.15s ease, transform 0.25s cubic-bezier(0.7, 0, 0.3, 1);
         }
 
-        /* Class to trigger the fade to black */
-        .fade-in-black {
+        /* Matrix Crash Sequence States */
+        .curtain-flash {
             opacity: 1;
         }
 
-        /* Class to hide the title smoothly */
+        .curtain-collapse {
+            background-color: #ff0055; /* Mid-point warning color swap */
+            transform: scaleY(1);
+        }
+
+        .curtain-shutdown {
+            background-color: #0a0c10; /* Final dark system power down look */
+        }
+
         .hidden {
             opacity: 0;
         }
@@ -96,23 +133,30 @@
         const curtain = document.getElementById('curtain');
         const redirectUrl = 'main.html'; 
 
-        // 1. Hide title as soon as the video successfully starts playing
         video.addEventListener('play', function() {
             title.classList.add('hidden');
         });
 
-        // 2. Bring the black curtain down when the video ends, then redirect
+        /* Cyberpunk Terminal Grid Crash Transition Hook */
         video.addEventListener('ended', function() {
-            // Fade the black overlay IN over the video
-            curtain.classList.add('fade-in-black');
+            // Stage 1: Fast Cyan Blast Flash Layer
+            curtain.classList.add('curtain-flash');
+
+            setTimeout(function() {
+                // Stage 2: Collapse Screen into Magenta warning line
+                curtain.classList.add('curtain-collapse');
+            }, 150);
+
+            setTimeout(function() {
+                // Stage 3: Terminal Screen Power Outage blackout
+                curtain.classList.add('curtain-shutdown');
+            }, 450);
             
-            // Wait exactly 1000 milliseconds (1 second) for the fade to finish, then swap
             setTimeout(function() {
                 window.location.href = redirectUrl;
-            }, 1000); 
+            }, 850); 
         });
 
-        // 3. Click anywhere fallback to force play if autoplay was blocked
         wrapper.addEventListener('click', function() {
             if (video.paused) {
                 video.play();
