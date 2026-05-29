@@ -16,7 +16,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Container to stack video and text on top of each other */
+        /* Container to stack video, text, and fade-layer */
         .video-container {
             position: relative;
             width: 100%;
@@ -35,8 +35,6 @@
             top: 0;
             left: 0;
             z-index: 1;
-            opacity: 1;
-            transition: opacity 1s ease; /* Handles the smooth 1-second fade-to-black */
         }
 
         /* The overlay title styled beautifully */
@@ -50,6 +48,25 @@
             text-align: center;
             pointer-events: none;
             transition: opacity 0.5s ease;
+        }
+
+        /* A solid black curtain that sits invisibly above the video */
+        .black-curtain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            z-index: 3; /* Sits on top of EVERYTHING */
+            opacity: 0;
+            pointer-events: none; /* Allows clicks to go through it */
+            transition: opacity 1s ease-in-out; /* Super smooth transition */
+        }
+
+        /* Class to trigger the fade to black */
+        .fade-in-black {
+            opacity: 1;
         }
 
         /* Class to hide the title smoothly */
@@ -69,12 +86,15 @@
             Your browser does not support the video tag.
         </video>
 
+        <div class="black-curtain" id="curtain"></div>
+
     </div>
 
     <script>
         const video = document.getElementById('myVideo');
         const title = document.getElementById('title');
         const wrapper = document.getElementById('wrapper');
+        const curtain = document.getElementById('curtain');
         const redirectUrl = 'main.html'; 
 
         // 1. Hide title as soon as the video successfully starts playing
@@ -82,12 +102,12 @@
             title.classList.add('hidden');
         });
 
-        // 2. Fade to black when the video ends, then redirect after 1 second
+        // 2. Bring the black curtain down when the video ends, then redirect
         video.addEventListener('ended', function() {
-            // Turn video transparent to show the black background behind it
-            video.style.opacity = '0';
+            // Fade the black overlay IN over the video
+            curtain.classList.add('fade-in-black');
             
-            // Wait exactly 1000 milliseconds (1 second) before swapping pages
+            // Wait exactly 1000 milliseconds (1 second) for the fade to finish, then swap
             setTimeout(function() {
                 window.location.href = redirectUrl;
             }, 1000); 
