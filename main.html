@@ -36,7 +36,7 @@
             position: relative;
         }
 
-        /* The Neon Timeline Spine */
+
         .roadmap-timeline::before {
             content: '';
             position: absolute;
@@ -61,7 +61,6 @@
         .milestone-block.left { justify-content: flex-start; }
         .milestone-block.right { justify-content: flex-end; }
 
-        /* Tech Modular Card Look with Cascade Animation Restored */
         .milestone-card {
             background-color: #11141a;
             padding: 25px;
@@ -70,17 +69,14 @@
             border: 1px solid rgba(0, 243, 255, 0.3);
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(0, 243, 255, 0.05);
             transition: border 0.3s ease, box-shadow 0.3s ease;
-            
-            /* Stacking position layer */
+
             position: relative;
             z-index: 2; 
 
-            /* Entry animation setup */
             opacity: 0;
             animation: cyberGlide 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
-        /* Staggered card arrivals for the cascading fluid effect */
         .milestone-block:nth-child(1) .milestone-card { animation-delay: 0.2s; }
         .milestone-block:nth-child(2) .milestone-card { animation-delay: 0.4s; }
         .milestone-block:nth-child(3) .milestone-card { animation-delay: 0.6s; }
@@ -102,7 +98,7 @@
             box-shadow: 0 5px 30px rgba(0, 243, 255, 0.2), inset 0 0 15px rgba(0, 243, 255, 0.1);
         }
 
-        /* Glowing Milestone Node Points - Higher layout hierarchy pushes them over the moving cards */
+       
         .milestone-dot {
             position: absolute;
             top: 25px;
@@ -114,7 +110,7 @@
             border-radius: 50%;
             transform: translateX(-50%);
             box-shadow: 0 0 12px #ff0055, 0 0 4px #ff0055;
-            z-index: 3; /* Kept on absolute top layer so cards glide underneath it */
+            z-index: 3; 
         }
 
         .milestone-card h2 {
@@ -153,7 +149,6 @@
             color: #e2e8f0;
         }
 
-        /* Futuristic Cyan Neon Button */
         .roadmap-btn {
             display: inline-block;
             background-color: transparent;
@@ -176,7 +171,6 @@
             box-shadow: 0 0 15px #00f3ff;
         }
 
-        /* Futuristic Magenta Neon Button */
         .outline-btn {
             display: inline-block;
             background-color: transparent;
@@ -199,7 +193,6 @@
             box-shadow: 0 0 15px #ff0055;
         }
 
-        /* Tech Footer Action Buttons Base */
         .footer-cyber-nav {
             max-width: 1000px;
             margin: 60px auto 40px auto;
@@ -260,7 +253,7 @@
             <div class="milestone-dot"></div>
             <div class="milestone-card">
                 <h2>01. The Smart Future Vision</h2>
-                <a href="https://www.sfenvironment.org/zero-waste-program-history-and-outcomes"><img src="SF.jpg" alt="SF Project Link"></a>
+                <a href="https://www.sfenvironment.org/zero-waste-program-history-and-outcomes" target="_blank"><img src="SF.jpg" alt="SF Project Link"></a>
                 <p>By 2050, cities will look drastically different. As urban populations continue to grow, sustainable tech and connected infrastructure redefine how people interact with their surroundings.</p>
                 <p style="margin-top: 8px;">A main part of this transformation is the integration of plastic-free practices into urban planning and daily life.</p>
                 <p style="font-size: 11px; color:#556380; margin-top:10px;">^ Click image for San Francisco official website</p>
